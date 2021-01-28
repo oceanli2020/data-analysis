@@ -1,4 +1,5 @@
 import { app, BrowserWindow } from 'electron'
+import events from './events'
 
 /**
  * Set `__static` path to static files in production
@@ -18,15 +19,27 @@ function createWindow () {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    height: 563,
+    height: 768,
     useContentSize: true,
-    width: 1000
+    width: 1280,
+    frame: false,
+    resizable: false,
+    icon: '',
+    webPreferences: {
+      nodeIntegration: true,
+      webSecurity: false,
+      devTools: true
+    }
   })
 
   mainWindow.loadURL(winURL)
 
   mainWindow.on('closed', () => {
     mainWindow = null
+  })
+  
+  Object.keys(events).forEach(key => {
+    events[key](mainWindow)
   })
 }
 

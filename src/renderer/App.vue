@@ -1,15 +1,21 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <router-view />
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'my-electron'
-  }
+export default {
+  name: 'App'
+}
 </script>
 
 <style>
-  /* CSS */
+* {
+  margin: 0;
+  padding: 0;
+}
+#app {
+  font-family: 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+}
 </style>
