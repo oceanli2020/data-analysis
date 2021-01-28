@@ -9,6 +9,19 @@ export default new Router({
       path: '/',
       name: 'HomePage',
       component: () => import('../views/HomePage.vue')
+    },
+    {
+      path: '/show',
+      name: 'Show',
+      component: () => import('../views/Show.vue'),
+      redirect: '/card',
+      children: [
+        {
+          path: '/card',
+          name: 'Card',
+          component: () => import('../views/Show/Card.vue')
+        }
+      ]
     }
   ]
 })
