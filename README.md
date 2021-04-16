@@ -1,4 +1,4 @@
-# my-electron
+# data-analysis
 
 > An electron-vue project
 
@@ -19,4 +19,4 @@ npm run build
 
 ---
 
-This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
+This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue)@[51d6443](https://github.com/SimulatedGREG/electron-vue/tree/51d64431a324ba812b94e48cd05ddb12f4e58675) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).

@@ -1,11 +1,10 @@
 <template>
   <div class="home">
-    <TitleBar />
     <div class="home-block">
       <div>
         <span class="title">hello! ocean li</span>
       </div>
-      <div class="start-block">
+      <div class="start">
         <el-link style="font-size:20px;" type="primary" @click="start"
           >start</el-link
         >
@@ -33,14 +32,16 @@ export default {
 </script>
 
 <style scoped>
-.home-block {
+.home {
   text-align: center;
+}
+.home-block{
   margin-top: 270px;
 }
 .title {
   font-size: 30px;
 }
-.start-block {
+.start {
   margin-top: 10px;
 }
 </style>

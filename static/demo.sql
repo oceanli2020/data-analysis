@@ -1,0 +1,6 @@
+CREATE TABLE "user" (
+
+"id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+
+"username" TEXT(20)
+);
