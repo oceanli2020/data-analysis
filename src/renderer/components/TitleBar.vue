@@ -1,6 +1,6 @@
 <template>
   <div class="title-bar">
-    <div class="title">测试</div>
+    <div class="title">数据分析</div>
     <div class="window-button flex-center no-drag">
       <el-button
         plain

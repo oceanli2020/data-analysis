@@ -29,7 +29,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     height: 768, // 高度
     useContentSize: true,
-    width: 1280, // 长度
+    width: 952, // 长度
     frame: false,
     resizable: false,
     icon: '',

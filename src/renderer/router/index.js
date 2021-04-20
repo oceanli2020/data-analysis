@@ -14,12 +14,27 @@ export default new Router({
       path: '/show',
       name: 'Show',
       component: () => import('../views/Show.vue'),
-      redirect: '/card',
+      redirect: '/extractData',
       children: [
         {
-          path: '/card',
-          name: 'Card',
-          component: () => import('../views/Show/Card.vue')
+          path: '/extractData',
+          name: 'ExtractData',
+          component: () => import('../views/Show/ExtractData.vue')
+        },
+        {
+          path: '/analysisData',
+          name: 'AnalysisData',
+          component: () => import('../views/Show/AnalysisData.vue')
+        },
+        {
+          path: '/showData',
+          name: 'ShowData',
+          component: () => import('../views/Show/ShowData.vue')
+        },
+        {
+          path: '/extractProcess',
+          name: 'ExtractProcess',
+          component: () => import('../views/Show/components/ExtractProcess.vue')
         }
       ]
     }
