@@ -1,6 +1,6 @@
 <template>
-  <div class="extract-data">
-    <div class="extract-data-block">
+  <div class="extract-process">
+    <div class="extract-process-block">
       <div>
         <el-progress
           type="circle"
@@ -21,7 +21,7 @@ import { ipcRenderer } from 'electron'
 // import { createNamespacedHelpers } from 'vuex'
 // const { mapState, mapActions } = createNamespacedHelpers('show')
 export default {
-  name: 'ExtractData',
+  name: 'ExtractProcess',
   data() {
     return {
       params: {
@@ -60,10 +60,10 @@ export default {
 }
 </script>
 <style scoped>
-.extract-data {
+.extract-process {
   text-align: center;
 }
-.extract-data-block {
+.extract-process-block {
   margin-top: 150px;
 }
 .title {

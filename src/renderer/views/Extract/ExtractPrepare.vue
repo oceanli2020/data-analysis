@@ -1,17 +1,17 @@
 <template>
-  <div class="card">
-    <div class="card-block">
+  <div class="extract-prepare">
+    <div class="extract-prepare-block">
       <el-form>
         <el-form-item
           ><el-button @click="extractData('weChat')" class="extract-button"
             >提取微信数据</el-button
           ></el-form-item
         >
-        <el-form-item
+        <!-- <el-form-item
           ><el-button @click="extractData('qq')" class="extract-button"
             >提取QQ数据</el-button
           ></el-form-item
-        >
+        > -->
       </el-form>
       <data-dialog ref="dataDialog" :type="type"></data-dialog>
     </div>
@@ -21,7 +21,7 @@
 <script>
 import DataDialog from './components/DataDialog'
 export default {
-  name: 'ExtractData',
+  name: 'ExtractPrepare',
   components: { DataDialog },
   data() {
     return {
@@ -38,10 +38,10 @@ export default {
 </script>
 
 <style scoped>
-.card {
+.extract-prepare {
   text-align: center;
 }
-.card-block {
+.extract-prepare-block {
   margin-top: 200px;
 }
 .extract-button {

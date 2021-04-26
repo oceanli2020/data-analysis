@@ -13,7 +13,7 @@
         >{{ item }}</el-menu-item
       ></el-menu
     >
-    <div class="content">
+    <div>
       <router-view />
     </div>
   </div>
@@ -22,7 +22,7 @@
 <script>
 import TitleBar from '../components/TitleBar'
 export default {
-  name: 'Show',
+  name: 'DashBoard',
   components: {
     TitleBar
   },
@@ -32,15 +32,15 @@ export default {
       activeIndex: '0',
       menuItemList: ['数据提取', '数据展示', '数据分析'],
       menuRouterMap: {
-        0: 'ExtractData',
-        1: 'ShowData',
-        2: 'AnalysisData'
+        0: '/extractData',
+        1: '/showData',
+        2: '/analysisData'
       }
     }
   },
   methods: {
     handleSelect(key) {
-      this.$router.push({ name: this.menuRouterMap[key] })
+      this.$router.push(this.menuRouterMap[key])
     }
   }
 }

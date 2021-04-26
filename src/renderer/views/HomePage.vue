@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     start() {
-      this.$router.push('/show')
+      this.$router.push('/dashBoard')
     }
   }
 }

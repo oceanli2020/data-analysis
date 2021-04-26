@@ -10,4 +10,10 @@ export function save(contacts) {
     .run(contacts)
 }
 
-
+export function getByUserIdAndUserName(contacts) {
+  const sql =
+    'select * from weChatContacts where userId = @userId and username = @username '
+  return DB.getInstance()
+    .prepare(sql)
+    .get(contacts)
+}

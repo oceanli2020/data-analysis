@@ -20,9 +20,9 @@ export default class WeChatXiaomi extends WeChatBase {
     //   file: destTarPath
     // })
     // this._storagePath = destFolder
-    await sleep(5000)
+    await sleep(2000)
     sendProcess('解析中...', 75)
-    await sleep(5000)
+    await sleep(2000)
     // const data = await fs.promises.readFile(
     //   path.join(
     //     this._storagePath,

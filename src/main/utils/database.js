@@ -29,9 +29,10 @@ export default class DB {
     if (!isDbExist) {
       dataBase.exec(fs.readFileSync(__static + '/demo.sql', 'utf8'))
     }
-
-    // dataBase.pragma('journal_mode = WAL')
-    // dataBase.pragma('case_sensitive_like=ON')
+    // ?
+    dataBase.pragma('journal_mode = WAL')
+    // 数据库区分大小写
+    dataBase.pragma('case_sensitive_like=ON')
 
     return dataBase
   }

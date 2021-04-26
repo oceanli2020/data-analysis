@@ -9,3 +9,8 @@ export function save(user) {
     .prepare(sql)
     .run(user)
 }
+
+export function getById(user) {
+  const sql = 'select * from weChatUser where id = @id '
+  return DB.getInstance().prepare(sql).get(user)
+}
