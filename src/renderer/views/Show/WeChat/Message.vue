@@ -53,9 +53,22 @@
                 v-if="message.isSend === 0 && !message.isTips"
                 class="chat-row"
               >
-                <el-avatar :size="40"><img :src="defaultAvatarUrl"/></el-avatar>
+                <el-avatar
+                  :size="40"
+                  :src="
+                    contactsType === 2 ? message.talker.avatar : talker.avatar
+                  "
+                  @error="true"
+                  ><img :src="defaultAvatarUrl"
+                /></el-avatar>
                 <div class="chat-info">
-                  <span>{{ message.talker.name }}</span>
+                  <span>{{
+                    contactsType === 2
+                      ? message.talker.conRemark
+                        ? message.talker.conRemark
+                        : message.talker.nickname
+                      : talker.displayName
+                  }}</span>
                   <div class="bubble">
                     <bubble :message="message" />
                   </div>
@@ -71,7 +84,7 @@
                 class="chat-row-self"
               >
                 <div class="chat-info-self">
-                  <div class="chat-name-self">{{ self.name }}</div>
+                  <div class="chat-name-self">{{ self.nickname }}</div>
                   <div class="bubble-self">
                     <bubble :message="message" />
                   </div>
@@ -128,7 +141,7 @@ export default {
       isPagination: false,
       defaultAvatarUrl: require('../../../assets/avatar/people.png'),
       weChatUserId: '',
-      contactsType: 0, //0为好友，3为公众号，2为群聊
+      contactsType: 2, //0为好友，3为公众号，2为群聊
       params: { userId: '', talker: '', contactsType: '', size: 10, current: 1 }
     }
   },
