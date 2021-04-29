@@ -141,7 +141,7 @@ export default {
       isPagination: false,
       defaultAvatarUrl: require('../../../assets/avatar/people.png'),
       weChatUserId: '',
-      contactsType: 2, //0为好友，3为公众号，2为群聊
+      contactsType: 0, //0为好友，3为公众号，2为群聊
       params: { userId: '', talker: '', contactsType: '', size: 10, current: 1 }
     }
   },

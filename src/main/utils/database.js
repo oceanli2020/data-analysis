@@ -29,6 +29,21 @@ export default class DB {
     if (!isDbExist) {
       dataBase.exec(fs.readFileSync(__static + '/demo.sql', 'utf8'))
     }
+
+    dataBase.function('regexp', (pattern, text) => {
+      const regex = new RegExp(pattern)
+      return Number(regex.test(text))
+    })
+
+    dataBase.function('matches', (text, pattern) => {
+      const regex = new RegExp(pattern, 'i')
+      const result = regex.exec(text)
+      if (result) {
+        return result[0]
+      }
+      return null
+    })
+
     // ?
     dataBase.pragma('journal_mode = WAL')
     // 数据库区分大小写

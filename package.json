@@ -86,6 +86,7 @@
     "mint-filter": "^3.0.1",
     "mkdirp": "1.0.4",
     "moment": "^2.27.0",
+    "nodejieba": "^2.5.2",
     "node-forge": "^0.9.1",
     "numeral": "^2.0.6",
     "pdfmake-zf": "^0.2.1",
