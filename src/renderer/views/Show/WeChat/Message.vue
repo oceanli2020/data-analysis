@@ -122,6 +122,8 @@
 import { ipcRenderer } from 'electron'
 import { formatTime } from '../../../utils/format'
 import Bubble from './components/Bubble'
+import { createNamespacedHelpers } from 'vuex'
+const { mapActions } = createNamespacedHelpers('show')
 export default {
   name: 'WeChatMessage',
   components: { Bubble },
@@ -141,7 +143,7 @@ export default {
       isPagination: false,
       defaultAvatarUrl: require('../../../assets/avatar/people.png'),
       weChatUserId: '',
-      contactsType: 0, //0为好友，3为公众号，2为群聊
+      contactsType: 2, //0为好友，3为公众号，2为群聊
       params: { userId: '', talker: '', contactsType: '', size: 10, current: 1 }
     }
   },
@@ -208,6 +210,7 @@ export default {
       }
       this.params.current = 1
       this.params.size = 10
+      this.setTalker(username)
       this.getMessage()
     },
     getMessage() {
@@ -230,7 +233,8 @@ export default {
     },
     handleErrorAvatar(error) {
       error.srcElement.src = this.defaultAvatarUrl
-    }
+    },
+    ...mapActions(['setTalker'])
   }
 }
 </script>

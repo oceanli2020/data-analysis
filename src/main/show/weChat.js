@@ -2,9 +2,7 @@ import {
   getByUserIdAndContactsType,
   getByTalkerAndUserId
 } from '../db//weChat/message'
-import {
-  getByUserIdAndUserName as getWeChatContactByUserIdAndUserName
-} from '../db/weChat/contacts'
+import { getByUserIdAndUserName as getWeChatContactByUserIdAndUserName } from '../db/weChat/contacts'
 import { getById } from '../db/weChat/user'
 
 const weChatMessageTips = {

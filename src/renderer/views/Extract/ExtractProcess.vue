@@ -18,8 +18,6 @@
 
 <script>
 import { ipcRenderer } from 'electron'
-// import { createNamespacedHelpers } from 'vuex'
-// const { mapState, mapActions } = createNamespacedHelpers('show')
 export default {
   name: 'ExtractProcess',
   data() {
@@ -31,11 +29,6 @@ export default {
       percentage: 0,
       message: ''
     }
-  },
-  computed: {
-    // ...mapState({
-    //   menuDisabled: (state) => state.menuDisabled
-    // })
   },
   mounted() {
     this.init()
@@ -55,7 +48,6 @@ export default {
         this.message = result.message
       })
     }
-    // ...mapActions(['setMenuDisabled'])
   }
 }
 </script>

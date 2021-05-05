@@ -1,19 +1,22 @@
 import { ipcMain } from 'electron'
 import nodejieba from 'nodejieba'
-import { getByUserIdAndSensitive, getByUserId } from '../db/weChat/message'
+import { getByUserId } from '../db/weChat/message'
 
 const analysis = (mainWindow) => {
   ipcMain.on('analysis:weChat:message', (event, params) => {
     const messages = getByUserId(params)
-    let sensitives = []
+    const wordMap = {}
     messages.forEach((message) => {
-      sensitives = sensitives.concat(nodejieba.cut(message.content))
+      const words = nodejieba.cut(message.content)
+      words.forEach((word) => {
+        wordMap[word] = wordMap[word] ? wordMap[word] + 1 : 1
+      })
     })
-    params['sensitives'] = sensitives
-    const list = getByUserIdAndSensitive(params)
     const wordList = []
-    list.forEach((item) => {
-      wordList.push({ name: item.sensitive, value: item.count })
+    Object.keys(wordMap).forEach((word) => {
+      if (wordMap[word] > 1 && word.length > 1) {
+        wordList.push({ name: word, value: wordMap[word] })
+      }
     })
     event.reply('analysis:weChat:message:reply', wordList)
   })

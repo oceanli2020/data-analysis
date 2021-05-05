@@ -1,16 +1,16 @@
 const state = {
-  menuDisabled: false
+  talker: ''
 }
 
 const mutations = {
-  SET_MENU_DISABLEd(state, menuDisabled) {
-    state.menuDisabled = menuDisabled
+  SET_TALKER(state, talker) {
+    state.talker = talker
   }
 }
 
 const actions = {
-  setMenuDisabled({ commit }, menuDisabled) {
-    commit('SET_MENU_DISABLEd', menuDisabled)
+  setTalker({ commit }, talker) {
+    commit('SET_TALKER', talker)
   }
 }
 
