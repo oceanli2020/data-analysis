@@ -1,3 +1,4 @@
+import { app } from 'electron'
 import fs from 'fs'
 import path from 'path'
 
@@ -14,4 +15,19 @@ export function getUniquePath(file) {
     count++
   }
   return file
+}
+
+export function getExecPath() {
+  const exePath = getUsableInstance(app, 'app').getPath('exe')
+  let execPath
+  if (process.env.NODE_ENV === 'development') {
+    execPath = exePath.substr(0, exePath.indexOf('node_modules'))
+  } else {
+    execPath = path.dirname(exePath)
+  }
+  return execPath
+}
+
+function getUsableInstance(arg, argName) {
+  return process.type === 'renderer' ? remote[argName] : arg
 }

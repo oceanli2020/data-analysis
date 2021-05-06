@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import { ipcRenderer } from 'electron'
 import DataDialog from './components/DataDialog'
 export default {
   name: 'ExtractPrepare',
@@ -28,7 +29,16 @@ export default {
       type: ''
     }
   },
+  mounted() {
+    this.init()
+  },
   methods: {
+    init() {
+      ipcRenderer.once('device:list:reply', (event, result) => {
+        console.log(result)
+      })
+      ipcRenderer.send('device:list')
+    },
     extractData(type) {
       this.type = type
       this.$refs.dataDialog.toOpen()

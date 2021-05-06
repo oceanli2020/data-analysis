@@ -32,7 +32,7 @@ export function getByTalkerAndUserId(message) {
 export function getByUserId(message) {
   const sql =
     'select m.talker, m.isSend, m.createTime, m.content, m.type, m.imgPath from weChatMessage m '+
-    'INNER JOIN  weChatContacts c on m.talker = c.username and c.userId = @userId and c.type = @contactsType ' +
+    'INNER JOIN  weChatContacts c on m.talker = c.username and c.userId = @userId  ' +
     `where m.userId = @userId and m.type = @type and m.talker = @talker`
   return DB.getInstance()
     .prepare(sql)

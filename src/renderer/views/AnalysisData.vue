@@ -31,7 +31,6 @@ export default {
     init() {
       const params = {
         userId: 1,
-        contactsType: 2,
         type: 1,
         talker: this.talker
       }
